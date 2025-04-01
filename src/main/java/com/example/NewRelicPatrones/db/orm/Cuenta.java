@@ -1,11 +1,20 @@
 package com.example.NewRelicPatrones.db.orm;
 
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+
+@Setter
+@Getter
 @Entity
+@Table(name = "cuenta", schema = "parcial")
 public class Cuenta {
     @Id
-    private String idCuenta;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_cuenta")
+    private Integer idCuenta;
 
-    private BigDecimal monto;
+    @Column(name = "monto")
+    private Integer monto;
 
-    // Getters y setters
 }

@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 @Setter
 @Getter
 @Entity
-@Table(name = "transaccion", schema = "parcial")
+@Table(name = "transaccion")
 public class Transaccion {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,7 +24,10 @@ public class Transaccion {
     @JoinColumn(name = "destino", referencedColumnName = "id_cuenta")
     private Cuenta destino;
 
+    @Column(name = "monto")
     private Integer monto;
+
+    @Column(name = "fecha")
     private LocalDateTime fecha;
 
 }

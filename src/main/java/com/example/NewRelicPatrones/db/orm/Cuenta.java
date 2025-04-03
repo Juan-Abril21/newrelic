@@ -7,10 +7,9 @@ import lombok.Setter;
 @Setter
 @Getter
 @Entity
-@Table(name = "cuenta", schema = "parcial")
+@Table(name = "cuenta")
 public class Cuenta {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_cuenta")
     private Integer idCuenta;
 

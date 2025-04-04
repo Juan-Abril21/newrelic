@@ -20,9 +20,9 @@ public class TransaccionService {
 
     @Transactional
     public void transferir(int origen, int destino, int monto) throws Exception {
-        Cuenta origenn = cuentaJPA.findById(origen).orElseThrow(() ->
+        Cuenta origenn = cuentaJPA.findByIdForUpdate(origen).orElseThrow(() ->
                 new Exception("Cuenta origen no encontrada"));
-        Cuenta destinoo = cuentaJPA.findById(destino).orElseThrow(() ->
+        Cuenta destinoo = cuentaJPA.findByIdForUpdate(destino).orElseThrow(() ->
                 new Exception("Cuenta destino no encontrada"));
 
         if (origenn.getMonto() < monto) {
